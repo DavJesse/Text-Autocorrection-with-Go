@@ -1,7 +1,7 @@
-# Text Auto-Correct With Go
+# Go-Reloaded 
 Welcome!
 
-Text Autocorrect With Go is a simple auto-correction tool that can manipulate text in acoordance to common grammar rules. Go-Reloaded's features include (but not limited to) capitalization, transforming text between uppercase and lowercase, and transforming hexadecimal or binary repesentations to decimal digits. That said, there are a few rules to follow to reap the benefits of these features.
+Go-Reloaded is a simple auto-correction tool that can manipulate text in acoordance to common grammar rules. Go-Reloaded's features include (but not limited to) capitalization, transforming text between uppercase and lowercase, and transforming hexadecimal or binary repesentations to decimal digits. That said, there are a few rules to follow to reap the benefits of these features.
 
 ## Features
 <b> Replace Hexadecimal Numbers: </b> Replace every instance of (hex) with the decimal equivalent of the preceding hexadecimal number.
