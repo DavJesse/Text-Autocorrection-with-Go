@@ -27,7 +27,6 @@ func main() {
 	strSlce = punct(strSlce)      // solve punctuation marks
 	strSlce = vowels(strSlce)     // Adjust articles "a" and "an" before vowels
 	strSlce = apostrophe(strSlce) // solve single quotation marks
-	//strSlce = recursiveCleanUp(strSlce) //re-run the cap, low, up, bin, and hex functions
 
 	// stitch string slice and write updated string to result.txt
 	finalStr := strings.Join(strSlce, " ") + "\n"
