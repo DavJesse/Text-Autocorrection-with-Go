@@ -11,17 +11,14 @@ func hex(arr []string) []string {
 	for i := 0; i < len(arr); i++ {
 		if strings.Contains(arr[i], "(hex)") {
 			if arr[i] == "(hex)" {
-				if !isPunct(arr[i-1][0]) {
-					deci, err := strconv.ParseInt(arr[i-1], 16, 64)
-					if err != nil {
-						fmt.Printf("%q is not a valid hexadecimal variable\n", arr[i-1])
-						continue
-					}
-					arr[i-1] = strconv.Itoa(int(deci))
-					arr = append(arr[:i], arr[i+1:]...)
-				} else {
-					continue
+				deci, err := strconv.ParseInt(arr[i-1], 16, 64)
+				if err != nil {
+					fmt.Printf("%q is not a valid hexadecimal variable\n", arr[i-1])
+					os.Exit(0)
 				}
+				arr[i-1] = strconv.Itoa(int(deci))
+				arr = append(arr[:i], arr[i+1:]...)
+
 			} else {
 				fmt.Printf("%q can't commpute, wrong format\n", arr[i])
 				continue
