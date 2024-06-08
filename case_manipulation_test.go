@@ -21,7 +21,7 @@ func TestCap(t *testing.T) {
 
 func TestLow(t *testing.T) {
 	testSlc := []string{"I", "should", "stop", "SHOUTING", "(low)"}
-	got := cap(testSlc)
+	got := low(testSlc)
 	expected := []string{"I", "should", "stop", "shouting"}
 
 	for i, sg := range got {
@@ -29,7 +29,7 @@ func TestLow(t *testing.T) {
 			if i == j && sg != se {
 				t.Errorf("Got: %s", got[i])
 				t.Errorf("Expected: %s", expected[j])
-				t.Errorf("TestCap Failed!")
+				t.Errorf("TestLow Failed!")
 				t.FailNow()
 			}
 		}
@@ -38,7 +38,7 @@ func TestLow(t *testing.T) {
 
 func TestUp(t *testing.T) {
 	testSlc := []string{"Ready,", "set,", "go", "(up)", "!"}
-	got := cap(testSlc)
+	got := up(testSlc)
 	expected := []string{"Ready,", "set,", "GO", "!"}
 
 	for i, sg := range got {
@@ -46,7 +46,7 @@ func TestUp(t *testing.T) {
 			if i == j && sg != se {
 				t.Errorf("Got: %s", got[i])
 				t.Errorf("Expected: %s", expected[j])
-				t.Errorf("TestCap Failed!")
+				t.Errorf("TestUp Failed!")
 				t.FailNow()
 			}
 		}
