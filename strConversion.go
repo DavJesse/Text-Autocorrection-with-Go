@@ -11,16 +11,16 @@ func hex(arr []string) []string {
 		if strings.Contains(arr[i], "(hex)") {
 			if arr[i] == "(hex)" {
 				if !isPunct(arr[i-1][0]) {
-				deci, err := strconv.ParseInt(arr[i-1], 16, 64)
-				if err != nil {
-					fmt.Printf("%q is not a valid hexadecimal variable\n", arr[i-1])
+					deci, err := strconv.ParseInt(arr[i-1], 16, 64)
+					if err != nil {
+						fmt.Printf("%q is not a valid hexadecimal variable\n", arr[i-1])
+						continue
+					}
+					arr[i-1] = strconv.Itoa(int(deci))
+					arr = append(arr[:i], arr[i+1:]...)
+				} else {
 					continue
 				}
-				arr[i-1] = strconv.Itoa(int(deci))
-				arr = append(arr[:i], arr[i+1:]...)
-			} else {
-				continue
-			}
 			} else {
 				fmt.Printf("%q can't commpute, wrong format\n", arr[i])
 				continue
@@ -45,7 +45,7 @@ func bin(arr []string) []string {
 				} else {
 					continue
 				}
-				
+
 			} else {
 				fmt.Printf("%q can't compute, wrong format\n", arr[i])
 				continue
@@ -54,4 +54,3 @@ func bin(arr []string) []string {
 	}
 	return arr
 }
-
