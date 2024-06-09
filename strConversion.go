@@ -9,6 +9,8 @@ import (
 
 func hex(arr []string) []string {
 	for i := 0; i < len(arr); i++ {
+
+		// Identify '(hex)' string and convert the preceding string
 		if strings.Contains(arr[i], "(hex)") {
 			if arr[i] == "(hex)" {
 				deci, err := strconv.ParseInt(arr[i-1], 16, 64)
@@ -17,8 +19,11 @@ func hex(arr []string) []string {
 					os.Exit(0)
 				}
 				arr[i-1] = strconv.Itoa(int(deci))
+
+				// Purge '(hex)' string
 				arr = append(arr[:i], arr[i+1:]...)
 
+				// Identify incorrectly formated '(bin)' strings
 			} else {
 				fmt.Printf("%q can't commpute, wrong format\n", arr[i])
 				continue
@@ -30,6 +35,8 @@ func hex(arr []string) []string {
 
 func bin(arr []string) []string {
 	for i := 0; i < len(arr); i++ {
+
+		// Identify '(bin)' string and convert the preceding string
 		if strings.Contains(arr[i], "(bin)") {
 			if arr[i] == "(bin)" {
 
@@ -39,8 +46,11 @@ func bin(arr []string) []string {
 					os.Exit(0)
 				}
 				arr[i-1] = strconv.Itoa(int(binry))
+
+				// Purge '(bin)' string
 				arr = append(arr[:i], arr[i+1:]...)
 
+				// Identify incorrectly formated '(bin)' strings
 			} else {
 				fmt.Printf("%q can't compute, wrong format\n", arr[i])
 				continue
