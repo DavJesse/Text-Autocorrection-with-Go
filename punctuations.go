@@ -27,7 +27,7 @@ func punct(arr []string) []string {
 func apostrophe(arr []string) []string {
 	for i := 0; i < len(arr); i++ {
 		// in words that end with a quotation mark, move the appostrophe to next word
-		if isQuoute(arr[i][len(arr[i])-1]) {
+		if isQuote(arr[i][len(arr[i])-1]) {
 			if i != len(arr)-1 {
 				emptSlc := string(arr[i][len(arr[i])-1])
 				arr[i] = arr[i][:len(arr[i])-1]
@@ -50,7 +50,7 @@ func isPunct(ch byte) bool {
 	return false
 }
 
-func isQuoute(ch byte) bool {
+func isQuote(ch byte) bool {
 	quoteMarks := "'\""
 
 	for _, quote := range quoteMarks {
@@ -60,13 +60,3 @@ func isQuoute(ch byte) bool {
 	}
 	return false
 }
-
-// func purgeEmpt(arr []string) []string {
-// for i := 0; i < len(arr); i++ {
-// 	if arr[i] == "" {
-// 		arr = append(arr[:i], arr[i+1:]...)
-// 		i--
-// 	}
-// }
-// return arr
-// }

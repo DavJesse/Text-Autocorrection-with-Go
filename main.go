@@ -10,8 +10,16 @@ func main() {
 	// Extract arguments types in command line, if not possible, print error message
 	args := os.Args[1:]
 
+	// Exit program if user does not input two arguments
 	if len(args) != 2 {
 		fmt.Println("Please Type Two Arguments")
+		return
+	}
+
+	// Exit program if arguments are not in the right order or include invalid names
+	if args[0] != "sample.txt" && args[1] != "result.txt" {
+		fmt.Println("Wrong format or incorrect file names")
+		fmt.Println("Usage: go run . sample.txt result.txt")
 		return
 	}
 	// Read from sample.txt and write to result.txt
