@@ -17,7 +17,7 @@ output: "30 files were added"
 * *For Example:*
 <pre>
 input: "It has been 10 (bin) years"
-output: "30 files were added"
+output: "It has been 2 years"
 </pre>
 
 **Uppercase Conversion:** Convert the preceding word to uppercase for every instance of (up).
