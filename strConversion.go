@@ -9,7 +9,6 @@ import (
 
 func hex(arr []string) []string {
 	for i := 0; i < len(arr); i++ {
-
 		// Identify '(hex)' string and convert the preceding string
 		if strings.Contains(arr[i], "(hex)") {
 			if arr[i] == "(hex)" {
@@ -35,7 +34,6 @@ func hex(arr []string) []string {
 
 func bin(arr []string) []string {
 	for i := 0; i < len(arr); i++ {
-
 		// Identify '(bin)' string and convert the preceding string
 		if strings.Contains(arr[i], "(bin)") {
 			if arr[i] == "(bin)" {
